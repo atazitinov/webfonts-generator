@@ -80,17 +80,8 @@ var webfont = function(options, done) {
 	// skipping codepoints explicitly specified in `options.codepoints`
 	var currentCodepoint = options.startCodepoint
 	var codepointsValues = _.values(options.codepoints)
-	/*function getNextCodepoint() {
-		while (_.contains(codepointsValues, currentCodepoint)) {
-			currentCodepoint++
-		}
-		var res = currentCodepoint
-		currentCodepoint++
-		return res
-	}*/
 	_.each(options.names, function(name) {
 		if (!options.codepoints[name]) {
-			// options.codepoints[name] = getNextCodepoint()
 			options.codepoints[name] = name
 		}
 	})
